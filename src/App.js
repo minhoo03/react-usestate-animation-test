@@ -1,23 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [tt, settt] = useState()
+  const [qwe, setqwe] = useState('')
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     settt({animationName: 'test'})
+  //   }, 2000);
+  // }, [])
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     if(qwe==='') {
+  //       setqwe('qwe')
+  //     } else if (qwe==='qwe') {
+  //       setqwe('')
+  //     }
+  //   }, 10000);
+  // }, [])
+
+  useEffect(() => {
+    setInterval(() => {
+      setqwe('qwe')
+      setTimeout(() => {
+        setqwe('')
+      }, 1000);
+    }, 3000);
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p className={qwe} style={tt}>asd</p>
     </div>
   );
 }
